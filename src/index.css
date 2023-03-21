@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btnhover{
+  background-color: transparent;
+  border: 1px solid crimson;
+  transition: background 0.5s;
+  color: crimson;
+}
+.btnhover:hover{
+    background-color: crimson;
+    color: white;
+    box-shadow: 0 0 1rem crimson;
+}
