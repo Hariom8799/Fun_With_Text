@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 export default function TextArea(props) {
     const [text,settext] = useState("")
     const [respText,setResptext] = useState("")
+    const [title,setTitle] = useState("Enter Text Below: ")
 // ------------------btnFunctions----------------------------------------------
     const upbtn = ()=>{
         let newtext = text.toUpperCase()
@@ -32,6 +33,11 @@ export default function TextArea(props) {
     }
     const changing = (event)=>{
         settext(event.target.value)
+        setTitle(`Keep Going \u{1F929} `)
+        if(event.target.value === ""){
+            setTitle("Enter Text Below: ")
+        }
+
     }
 
   return (
@@ -39,7 +45,7 @@ export default function TextArea(props) {
     <div className="container">
 
         <div className="mb-3">
-            <h1 style={{color:(props.theme==='dark'?'white':'black')}} className='mt-3 text-center'>Enter Text Below: </h1>
+            <h1 style={{color:(props.theme==='dark'?'white':'black')}} className='mt-3 text-center'>{title}</h1>
             <textarea style={{backgroundColor:(props.theme==='dark'?'#35373b':'white'),color:(props.theme==='dark'?'white':'black')}} className="form-control" id="exampleFormControlTextarea1" rows="10" value={text} onChange={changing}></textarea>
             <div className="text-center my-3">
                 <button disabled={text.length===0} className={` btn  ${props.theme==='light'?'btn-outline-success':'btnhover'} my-3 mx-1 my-1`} onClick={upbtn} >Convert To UpperCase</button>
