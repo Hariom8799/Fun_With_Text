@@ -54,7 +54,7 @@ export default function TextArea(props) {
                 <button disabled={text.length===0} className={` btn  ${props.theme==='light'?'btn-outline-success':'btnhover'} my-3 mx-1 my-1`} onClick={resetbtn}>Reset</button>
                 <button disabled={text.length===0} className={` btn  ${props.theme==='light'?'btn-outline-success':'btnhover'} my-3 mx-1 my-1`} onClick={copybtn}>Copy To Clipboard</button>
             </div>
-            <h1 style={{color:(props.theme==='dark'?'white':'black')}} className='text-center'>Response</h1>
+            <h1 style={{color:(props.theme==='dark'?'white':'black')}} className='text-center'>Your changed Text is here: &#128071;	</h1>
             <textarea style={{backgroundColor:(props.theme==='dark'?'#35373b':'white')}} className="form-control my-3" id="exampleFormControlTextarea1" rows="10" value={respText} onChange={()=>{}} ></textarea>
               
         </div>
